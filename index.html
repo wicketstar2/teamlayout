@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Soccer Pitch with Drag and Drop</title>
+    
+    
+</head>
+<div class="front-row" id="front-row"><p1>Front row</p1></div>
+<div class="middle-row" id="middle-row"><p1>Middle row(OPT)</p1></div>
+<div class="back-row" id="back-row"><p1>Back row</p1></div>
+<body>
+    
+    <div class="bg">
+        <input type="file" accept=".txt" onchange="loadPlayers(event)" />
+
+        <div id="player-list">
+            <h3>Players</h3>
+            <!-- Player names will be dynamically inserted here -->
+        </div>
+
+        <div>
+            <input type="text" id="new-player-name" placeholder="Enter new player name">
+            <button onclick="addPlayerManually()">Add Player</button>
+        </div>
+
+       
+
+        <!-- Big container for drop zones -->
+        <div id="zone-container" style="display: flex; flex-wrap: wrap; margin-top: 20px;">
+            <div id="div1" class="zone" style=" right: 30rem;
+            top: 35rem;
+            height: 50px;
+            width: 500px;
+            border: 3px solid #000000;
+            padding: 10px;;" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="div1" class="zone" style=" right: -0.5rem;
+            top: -15rem;
+            height: 50px;
+            width: 500px;
+            border: 3px solid #000000;
+            padding: 10px;;" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="div1" class="zone" style=" right: -0.5rem;
+            top: -15rem;
+            height: 50px;
+            width: 500px;
+            border: 3px solid #000000;
+            padding: 10px;;" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <!-- Existing drop zone -->
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
