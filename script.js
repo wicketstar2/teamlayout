@@ -243,7 +243,13 @@ document.getElementById("back-row").style.fontSize = "x-large";
             });
         });
   
-        // Set Item
-localStorage.setItem("player-list");
-// Retrieve
-document.getElementById("player-list").innerHTML = localStorage.getItem("player-list");
+        const params = new URLSearchParams(window.location.search);
+const configNumber = params.get('config');
+
+// Use the configNumber to load specific configurations
+if (configNumber) {
+    console.log(`Loading configuration #${configNumber}`);
+    // Example: Adjust zones, load predefined players, etc.
+}
+
+
