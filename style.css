@@ -1,19 +1,20 @@
+/* General styling */
 body {
     font-family: Arial, sans-serif;
-    padding: 20px;
     margin: 0;
     height: 100vh;
-    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(245, 245, 245);
+    overflow-x: hidden;
 }
 
 .bg {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 #player-list {
@@ -23,21 +24,23 @@ body {
 .zone {
     position: relative;
     height: 150px;
-    width: 500px;
-    border: 3px solid #000000;
+    width: 100%;
+    max-width: 500px;
+    border: 3px solid #000;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px;
+    background-color: #f7f7f7;
 }
 
-.front-row,
-.middle-row,
-.back-row {
+.front-row, .middle-row, .back-row {
     margin-bottom: 20px;
     text-align: center;
     font-weight: bold;
+    font-size: 18px;
+    color: #333;
 }
 
 .draggable {
@@ -62,19 +65,16 @@ body {
     background-color: rgba(200, 200, 200, 0.8);
     padding: 10px;
     border: 1px solid black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .draggable {
     cursor: move;
     margin: 5px 0;
-    width: auto;
     background-color: lightblue;
     padding: 5px;
     text-align: center;
     position: relative;
-    display: flex;
-    justify-content: flex-start;
-    gap: 5px;
 }
 
 .menu {
@@ -96,29 +96,10 @@ body {
     background-color: lightgray;
 }
 
-.options {
-    position: absolute;
-    right: 5px;
-    top: 0;
-    cursor: pointer;
-}
-
-.front-row,
-.middle-row,
-.back-row {
-    color: black;
-}
-
-body, html {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #login-section {
     margin: 20px auto;
-    width: 300px;
+    width: 100%;
+    max-width: 350px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -160,9 +141,88 @@ body, html {
     background-color: #0056b3;
 }
 
-.hidden {
+.error-message {
+    color: red;
+    font-size: 14px;
     display: none;
 }
-.drag-drop-section {
- margin-top: 100px;
+
+#age-groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#age-groups button {
+    padding: 12px;
+    font-size: 14px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#age-groups button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    #login-section {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    #age-groups {
+        flex-direction: column;
+    }
+
+    #age-groups button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .zone {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .draggable {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .bg {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .draggable {
+        font-size: 12px;
+    }
+
+    .zone {
+        height: 120px;
+    }
+
+    .front-row, .middle-row, .back-row {
+        font-size: 16px;
+    }
+
+    #login-section {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #age-groups button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .bg {
+        padding: 5px;
+    }
 }

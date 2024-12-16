@@ -1,36 +1,16 @@
-// Stores accounts
-let accounts = {};
-
 // Login Function
 function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    if (accounts[username] === password) {
+    // Change the username and password to 'admin'
+    if (username === "admin" && password === "admin") {
         alert("Login successful!");
         document.getElementById("login-section").classList.add("hidden");
         document.getElementById("home-page").classList.remove("hidden");
         loadAgeGroups();
     } else {
         document.getElementById("login-error").style.display = "block";
-    }
-}
-
-// Account Creation
-function showCreateAccountForm() {
-    document.getElementById("create-account-form").classList.remove("hidden");
-}
-
-function createAccount() {
-    const newUsername = document.getElementById("new-username").value;
-    const newPassword = document.getElementById("new-password").value;
-
-    if (newUsername && newPassword) {
-        accounts[newUsername] = newPassword;
-        alert("Account created successfully!");
-        document.getElementById("create-account-form").classList.add("hidden");
-    } else {
-        document.getElementById("account-error").style.display = "block";
     }
 }
 
@@ -110,14 +90,14 @@ function addPlayer(name, index = Date.now()) {
     playerList.appendChild(player);
 }
 
- // Function to show gender selection
-        function showGenderSelection() {
-            document.getElementById('gender-selection').classList.remove('hidden');
-        }
+// Function to show gender selection
+function showGenderSelection() {
+    document.getElementById('gender-selection').classList.remove('hidden');
+}
 
-        // Function to handle gender selection
-        function selectGender(gender) {
-            sessionStorage.setItem('selectedGender', gender);
-            document.getElementById('gender-selection').classList.add('hidden');
-            document.getElementById('login-section').classList.remove('hidden');
-        }
+// Function to handle gender selection
+function selectGender(gender) {
+    sessionStorage.setItem('selectedGender', gender);
+    document.getElementById('gender-selection').classList.add('hidden');
+    document.getElementById('login-section').classList.remove('hidden');
+}

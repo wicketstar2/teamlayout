@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Soccer Pitch with Drag and Drop</title>
-  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
-
 
     <!-- Gender Selection Section -->
     <div id="gender-selection" class="hidden">
@@ -16,7 +16,6 @@
         <button onclick="selectGender('Male')">Male</button>
         <button onclick="selectGender('Female')">Female</button>
     </div>
-
 
     <!-- Login Section -->
     <div id="login-section">
@@ -27,19 +26,6 @@
         <input type="password" id="password" placeholder="Enter your password">
         <button onclick="login()">Login</button>
         <p id="login-error" style="color: red; display: none;">Invalid credentials. Please try again.</p>
-
-        <!-- Create Username and Password -->
-        <div>
-            <button onclick="showCreateAccountForm()">Create a new username and password</button>
-            <div id="create-account-form" class="hidden">
-                <label for="new-username">New Username:</label>
-                <input type="text" id="new-username" placeholder="Create a username">
-                <label for="new-password">New Password:</label>
-                <input type="password" id="new-password" placeholder="Create a password">
-                <button onclick="createAccount()">Create Account</button>
-                <p id="account-error" style="color: red; display: none;">Please fill in both fields.</p>
-            </div>
-        </div>
     </div>
 
     <!-- Home Page -->
@@ -51,28 +37,20 @@
     <!-- Drag-and-Drop Section -->
     <div class="bg hidden" id="drag-drop-section">
         <input type="file" accept=".txt" onchange="loadPlayers(event)" />
-  
         <div id="player-list">
             <h3>Players</h3>
         </div>
-
         <div>
             <input type="text" id="new-player-name" placeholder="Enter new player name">
             <button onclick="addPlayerManually()">Add Player</button>
         </div>
-
         <div class="front-row" id="front-row">Front Row</div>
         <div id="div1" class="zone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
         <div class="middle-row" id="middle-row">Middle Row (Optional)</div>
         <div id="div2" class="zone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-
         <div class="back-row" id="back-row">Back Row</div>
         <div id="div3" class="zone" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     </div>
-
-   
-
 
     <script src="script.js"></script>
 </body>
