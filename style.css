@@ -81,18 +81,21 @@ body, html {
 }
 
 .front-row {
+    color: whitesmoke;
     position: absolute;
     right: 700px;
     top: 500px;        
 }
 
 .middle-row {
+    color: whitesmoke;
     position: absolute;
     right: 675px;
     top: 300px;        
 }
 
 .back-row {
+    color: whitesmoke;
     position: absolute;
     right: 700px;
     top: 75px;        
